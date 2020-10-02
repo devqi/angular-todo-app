@@ -10,10 +10,12 @@ export class TodoHeaderComponent {
   faPlusSquare = faPlusSquare;
   todoText: string;
   @Output() addButtonClicked: EventEmitter<any>;
+  @Output() statusSelectChanged: EventEmitter<any>;
 
   constructor() {
     this.todoText = '';
     this.addButtonClicked = new EventEmitter<any>();
+    this.statusSelectChanged = new EventEmitter<any>();
   }
 
   addTodoItemHandler(e: Event): void {
@@ -25,5 +27,11 @@ export class TodoHeaderComponent {
     });
 
     this.todoText = '';
+  }
+
+  filterOnChangeHandler(e) {
+    const status = e.target.value;
+
+    this.statusSelectChanged.emit(status);
   }
 }

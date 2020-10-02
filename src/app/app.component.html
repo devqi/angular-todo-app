@@ -2,7 +2,8 @@
   <header>
     <h1>DevQ's Todo List</h1>
   </header>
-  <todo-header (addButtonClicked)="addTodoItemHandler($event)"></todo-header>
-  <todo-list [todoList]="todoList" (completeTodoBtnClicked)="completeTodoBtnHandler($event)"
+  <todo-header (addButtonClicked)="addTodoItemHandler($event)" (statusSelectChanged)="changeStatusHandler($event)">
+  </todo-header>
+  <todo-list [todoList]="filteredTodoList" (completeTodoBtnClicked)="completeTodoBtnHandler($event)"
     (removeTodoBtnClicked)="removeTodoBtnHandler($event)"></todo-list>
 </div>

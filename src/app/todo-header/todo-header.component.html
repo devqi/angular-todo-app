@@ -4,7 +4,7 @@
     <fa-icon [icon]="faPlusSquare"></fa-icon>
   </button>
   <div class="select">
-    <select name="todos" class="filter-todo">
+    <select name="todos" class="filter-todo" (change)="filterOnChangeHandler($event)">
       <option value="all">All</option>
       <option value="completed">Completed</option>
       <option value="uncompleted">Uncompleted</option>
