@@ -1,0 +1,11 @@
+<div class="todo">
+  <li class="todo-item">
+    {{todoItem.text}}
+  </li>
+  <button class="complete-btn" onClick={updateTodoItemHandler}>
+    <fa-icon [icon]="faCheck"></fa-icon>
+  </button>
+  <button class="trash-btn" onClick={removeTodoItemHandler}>
+    <fa-icon [icon]="faTrash"></fa-icon>
+  </button>
+</div>

@@ -1,0 +1,7 @@
+<div class="todo-container">
+  <ul class="todo-list">
+    <ng-template ngFor let-todoItem [ngForOf]="todoList">
+      <todo-item [todoItem]="todoItem"></todo-item>
+    </ng-template>
+  </ul>
+</div>
