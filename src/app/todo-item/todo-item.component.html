@@ -1,11 +1,11 @@
 <div class="todo">
-  <li class="todo-item">
+  <li class="todo-item" [ngClass]="{'completed': todoItem.completed}">
     {{todoItem.text}}
   </li>
-  <button class="complete-btn" onClick={updateTodoItemHandler}>
+  <button class="complete-btn" (click)="updateTodoItemHandler()">
     <fa-icon [icon]="faCheck"></fa-icon>
   </button>
-  <button class="trash-btn" onClick={removeTodoItemHandler}>
+  <button class="trash-btn" (click)="removeTodoItemHandler()">
     <fa-icon [icon]="faTrash"></fa-icon>
   </button>
 </div>

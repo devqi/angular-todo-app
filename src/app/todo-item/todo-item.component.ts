@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { faCheck, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,9 +9,24 @@ import { faCheck, faTrash } from '@fortawesome/free-solid-svg-icons';
 export class TodoItemComponent implements OnInit {
   faCheck = faCheck;
   faTrash = faTrash;
-  @Input() todoItem: any;
 
-  constructor() {}
+  @Input() todoItem: any;
+  @Output() completeTodoBtnClicked: EventEmitter<any>;
+  @Output() removeTodoBtnClicked: EventEmitter<any>;
+
+  constructor() {
+    this.completeTodoBtnClicked = new EventEmitter<any>();
+    this.removeTodoBtnClicked = new EventEmitter<any>();
+  }
 
   ngOnInit(): void {}
+
+  updateTodoItemHandler() {
+    this.todoItem.completed = true;
+    this.completeTodoBtnClicked.emit(this.todoItem);
+  }
+
+  removeTodoItemHandler() {
+    this.removeTodoBtnClicked.emit(this.todoItem);
+  }
 }

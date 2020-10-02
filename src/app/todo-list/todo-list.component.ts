@@ -8,9 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class TodoListComponent implements OnInit {
   @Input() todoList: Array<any>;
 
-  constructor() {
-    console.log('todo-list: ', this.todoList);
-  }
+  constructor() {}
 
   ngOnInit(): void {}
+
+  completeTodoBtnHandler(valueEmittedByTodoItem) {
+    console.log('valueEmittedByTodoItem: ', valueEmittedByTodoItem);
+  }
+
+  removeTodoBtnHandler(valueEmittedByTodoItem) {
+    this.todoList = this.todoList.filter(
+      (todo) => todo.id !== valueEmittedByTodoItem.id
+    );
+  }
 }
