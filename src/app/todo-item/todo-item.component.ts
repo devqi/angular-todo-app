@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { faCheck, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,7 +6,7 @@ import { faCheck, faTrash } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.css'],
 })
-export class TodoItemComponent implements OnInit {
+export class TodoItemComponent {
   faCheck = faCheck;
   faTrash = faTrash;
 
@@ -18,8 +18,6 @@ export class TodoItemComponent implements OnInit {
     this.completeTodoBtnClicked = new EventEmitter<any>();
     this.removeTodoBtnClicked = new EventEmitter<any>();
   }
-
-  ngOnInit(): void {}
 
   updateTodoItemHandler() {
     this.todoItem.completed = true;

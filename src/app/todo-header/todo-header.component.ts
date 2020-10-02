@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,7 +6,7 @@ import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './todo-header.component.html',
   styleUrls: ['./todo-header.component.css'],
 })
-export class TodoHeaderComponent implements OnInit {
+export class TodoHeaderComponent {
   faPlusSquare = faPlusSquare;
   todoText: string;
   @Output() addButtonClicked: EventEmitter<any>;
@@ -15,8 +15,6 @@ export class TodoHeaderComponent implements OnInit {
     this.todoText = '';
     this.addButtonClicked = new EventEmitter<any>();
   }
-
-  ngOnInit(): void {}
 
   addTodoItemHandler(e: Event): void {
     e.preventDefault();

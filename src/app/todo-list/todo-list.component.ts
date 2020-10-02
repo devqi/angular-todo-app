@@ -1,16 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
 })
-export class TodoListComponent implements OnInit {
+export class TodoListComponent {
   @Input() todoList: Array<any>;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   completeTodoBtnHandler(valueEmittedByTodoItem) {
     console.log('valueEmittedByTodoItem: ', valueEmittedByTodoItem);
