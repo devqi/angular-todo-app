@@ -20,7 +20,7 @@ export class TodoItemComponent {
   }
 
   updateTodoItemHandler() {
-    this.todoItem.completed = true;
+    this.todoItem.completed = !this.todoItem.completed;
     this.completeTodoBtnClicked.emit(this.todoItem);
   }
 

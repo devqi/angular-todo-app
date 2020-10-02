@@ -3,5 +3,6 @@
     <h1>DevQ's Todo List</h1>
   </header>
   <todo-header (addButtonClicked)="addTodoItemHandler($event)"></todo-header>
-  <todo-list [todoList]="todoList"></todo-list>
+  <todo-list [todoList]="todoList" (completeTodoBtnClicked)="completeTodoBtnHandler($event)"
+    (removeTodoBtnClicked)="removeTodoBtnHandler($event)"></todo-list>
 </div>
