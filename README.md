@@ -1,5 +1,7 @@
 # AngularTodoApp
 
+This Project is created according to the original project [react-todo-app](https://github.com/qistra/react-todo-app) to compare some concepts between REACT and ANGULAR.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
 
 ## Development server
